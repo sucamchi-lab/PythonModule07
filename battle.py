@@ -29,8 +29,12 @@ if __name__ == "__main__":
     print("Testing factory")
     test_factory(flame_factory)
 
+    print()
+
     print("Testing factory")
     test_factory(aqua_factory)
+
+    print()
 
     print("Testing battle")
     test_battle(flame_factory, aqua_factory)
