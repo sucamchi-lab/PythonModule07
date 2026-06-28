@@ -12,7 +12,7 @@ class AggressiveStrategy(BattleStrategy):
         if not self.is_valid(creature):
             raise Exception(
                 f"Battle error, aborting tournament: Invalid Creature "
-                f"'{creature.name}' for this aggressive strategy.")
+                f"'{creature.name}' for this aggressive strategy")
         print(creature.transform())  # type:ignore
         print(creature.attack())
         print(creature.revert())  # type:ignore
