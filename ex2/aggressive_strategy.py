@@ -6,11 +6,13 @@ from ex1.capability import TransformCapability
 class AggressiveStrategy(BattleStrategy):
 
     def is_valid(self, creature: Creature) -> bool:
-        if isinstance(creature, TransformCapability):
-            return True
-        return False
+        return isinstance(creature, TransformCapability)
 
     def act(self, creature: Creature) -> None:
-        print(creature.transform())
+        if not self.is_valid(creature):
+            raise Exception(
+                f"Battle error, aborting tournament: Invalid Creature "
+                f"'{creature.name}' for this aggressive strategy.")
+        print(creature.transform())  # type:ignore
         print(creature.attack())
-        print(creature.revert())
+        print(creature.revert())  # type:ignore
